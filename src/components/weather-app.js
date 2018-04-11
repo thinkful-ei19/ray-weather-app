@@ -14,45 +14,45 @@ export default class WeatherApp extends React.Component {
       days: [
         {
           name: 'monday',
-          dayTemp: '71',
+          dayTemp: '75',
           nightTemp: '61',
-          forecast: 'rainy'
+          forecast: 'sunny'
         },
         {
           name: 'tuesday',
-          dayTemp: '71',
-          nightTemp: '61',
-          forecast: 'rainy'
+          dayTemp: '72',
+          nightTemp: '65',
+          forecast: 'cloudy'
         },
         {
           name: 'wednesday',
-          dayTemp: '71',
-          nightTemp: '61',
+          dayTemp: '50',
+          nightTemp: '45',
           forecast: 'rainy'
         },
         {
           name: 'thursday',
-          dayTemp: '71',
-          nightTemp: '61',
-          forecast: 'rainy'
+          dayTemp: '80',
+          nightTemp: '67',
+          forecast: 'sunny'
         },
         {
           name: 'friday',
-          dayTemp: '71',
-          nightTemp: '61',
-          forecast: 'rainy'
+          dayTemp: '31',
+          nightTemp: '23',
+          forecast: 'snowy'
         },
         {
           name: 'saturday',
-          dayTemp: '71',
-          nightTemp: '61',
-          forecast: 'rainy'
+          dayTemp: '45',
+          nightTemp: '37',
+          forecast: 'cloudy'
         },
         {
           name: 'sunday',
-          dayTemp: '71',
-          nightTemp: '61',
-          forecast: 'rainy'
+          dayTemp: '78',
+          nightTemp: '67',
+          forecast: 'sunny'
         }
       ]
     }
@@ -64,17 +64,18 @@ export default class WeatherApp extends React.Component {
     })
   }
   render() {
-    const filteredDays = this.state.days.filter(day => day.name.toLowerCase().includes(this.state.setWeather.toLowerCase() ));
-    console.log(filteredDays);
+    const filteredDays = this.state.days.filter(day => day.name.includes(this.state.setWeather));
+    console.log(filteredDays[0].dayTemp);
 
     return (
       <div className="weather-app">
         <SearchForm day={this.state.days} onClick={day => this.setWeather(day)} />
-        <WeatherTemp days={filteredDays} />
-        <WeatherImage />
+        <WeatherTemp temperature={filteredDays} />
+        <WeatherImage forecast={filteredDays.forecast}/>
       </div>
     )
   }
 };
 
 
+//<WeatherTemp dayTemp={filteredDays.dayTemp} nightTemp={filteredDays.nightTemp} />

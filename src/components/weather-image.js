@@ -8,7 +8,13 @@ export default function WeatherImage(props) {
     const rainy = <img src="http://downloadicons.net/sites/default/files/drizzle-logos-47352.png" alt="rain icon" />;
     const snowy = <img src="https://cdn1.iconfinder.com/data/icons/smallicons-weather/32/snowflake-256.png" alt="snow icon" />;
 
-    return (
-        cloudy
-    );
+    if(props.forecast === 'sunny') {
+        return sunny;
+    } else if(props.forecast === 'cloudy') {
+        return cloudy;
+    } else if(props.forecast === 'rainy') {
+        return rainy;
+    } else if(props.forecast === 'snowy') {
+        return snowy;
+    }
 };
