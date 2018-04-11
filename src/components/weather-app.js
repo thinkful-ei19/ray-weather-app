@@ -65,13 +65,13 @@ export default class WeatherApp extends React.Component {
   }
   render() {
     const filteredDays = this.state.days.filter(day => day.name.includes(this.state.setWeather));
-    console.log(filteredDays[0].dayTemp);
+    console.log(filteredDays[0]);
 
     return (
       <div className="weather-app">
         <SearchForm day={this.state.days} onClick={day => this.setWeather(day)} />
         <WeatherTemp temperature={filteredDays} />
-        <WeatherImage forecast={filteredDays.forecast}/>
+        <WeatherImage weather={filteredDays[0]}/>
       </div>
     )
   }

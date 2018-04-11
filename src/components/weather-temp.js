@@ -23,9 +23,9 @@ export default function WeatherTemp(props) {
 
     return (
        <ul className="weather-temp">
-            <li>{dayOfWeek}</li>
-            <li>{dayTemp}</li>
-            <li>{nightTemp}</li>
+            {dayOfWeek}
+            {dayTemp}
+            {nightTemp}
        </ul>
     );
 }
