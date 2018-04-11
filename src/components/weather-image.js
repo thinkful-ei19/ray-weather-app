@@ -3,18 +3,18 @@ import React from 'react';
 import './weather-image.css';
 
 export default function WeatherImage(props) {
-    const sunny = <img src="http://2.bp.blogspot.com/-Rhd9cS9P3mM/T5PgItS5rGI/AAAAAAAAAE4/UoIIm1Z8szU/s1600/untitled.JPG" alt="a sunny day" />;
-    const cloudy = <img src="http://gotoflashgames.com/files/file/036.jpg" alt="a waving cloud" />;
-    const rainy = <img src="http://downloadicons.net/sites/default/files/drizzle-logos-47352.png" alt="rain icon" />;
-    const snowy = <img src="https://cdn1.iconfinder.com/data/icons/smallicons-weather/32/snowflake-256.png" alt="snow icon" />;
+    const sunny = <img src="https://www.flaticon.com/premium-icon/icons/svg/463/463957.svg" alt="sun icon" />;
+    const cloudy = <img src="https://www.flaticon.com/premium-icon/icons/svg/463/463978.svg" alt="cloud icon" />;
+    const rainy = <img src="https://www.flaticon.com/premium-icon/icons/svg/463/463961.svg" alt="rain icon" />;
+    const snowy = <img src="https://image.flaticon.com/icons/png/512/382/382569.png" alt="snow icon" />;
 
     if(props.forecast === 'sunny') {
-        return sunny;
+        return <div>{sunny}</div>;
     } else if(props.forecast === 'cloudy') {
-        return cloudy;
+        return <div>{cloudy}</div>;
     } else if(props.forecast === 'rainy') {
-        return rainy;
+        return <div>{rainy}</div>;
     } else if(props.forecast === 'snowy') {
-        return snowy;
+        return <div>{snowy}</div>;
     }
 };
